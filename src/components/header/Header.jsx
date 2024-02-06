@@ -1,11 +1,16 @@
+import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 import Cart from "./cart/Cart";
 
 const Header = () => {
   return (
     <StyledHeader>
-      <p>Logo</p>
-      <Cart />
+      <Link to="/">
+        <p>Logo</p>
+      </Link>
+      <Link to="/cart">
+        <Cart />
+      </Link>
     </StyledHeader>
   );
 };
