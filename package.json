@@ -10,9 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@primer/octicons-react": "^19.8.0",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.7",
+    "@mui/material": "^5.15.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "simple-icons": "^11.3.0",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
