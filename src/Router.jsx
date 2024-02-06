@@ -3,22 +3,32 @@ import App from "./App";
 import Home from "./Home";
 import Cart from "./Cart";
 import ErrorPage from "./ErrorPage";
+import { useState } from "react";
 
 const Router = () => {
+  const [cartItems, setCartItems] = useState([]);
+  const [isAdded, setIsAdded] = useState(false);
+
   const mainProps = {
-    addToCart: () => {
-      console.log("click");
+    addToCart: (item) => {
+      const newCartItems = [...cartItems, item];
+      setCartItems(newCartItems);
+      setIsAdded(true);
     },
   };
+
+  const itemCount = cartItems.length;
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <App />,
+      element: (
+        <App isAdded={isAdded} setIsAdded={setIsAdded} itemCount={itemCount} />
+      ),
       children: [
         {
           path: "/",
-          element: <Home props={mainProps} />, // Pass mainProps to Home component
+          element: <Home props={mainProps} />,
           errorElement: <ErrorPage />,
         },
         {

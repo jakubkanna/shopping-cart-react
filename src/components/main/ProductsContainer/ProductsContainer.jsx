@@ -38,7 +38,7 @@ export default function ProductsContainer({ addToCart }) {
         <Product key={product.id} className="product">
           <ProductTitle>{product.title}</ProductTitle>
           <ProductImage src={product.image} alt={product.title} />
-          <button onClick={addToCart}>Add to cart</button>
+          <button onClick={() => addToCart(product)}>Add to cart</button>
         </Product>
       ))}
     </ProductContainer>

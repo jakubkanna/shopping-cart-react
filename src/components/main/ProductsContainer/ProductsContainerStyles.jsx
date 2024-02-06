@@ -8,6 +8,7 @@ export const ProductContainer = styled.div`
 
 export const Product = styled.div`
   border: 1px solid #ccc;
+  border-radius: 6px;
   padding: 10px;
   display: grid;
   grid-template-rows: auto 1fr auto;

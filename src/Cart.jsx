@@ -1,3 +1,3 @@
-export default function Cart({ title }) {
+export default function Cart({ itemCount }) {
   return <></>;
 }
