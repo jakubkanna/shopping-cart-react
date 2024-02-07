@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import CartContainer from "./components/main/cartContainer/CartContainer";
 
 export default function Cart({ props }) {
-  const { cartItems, setCartItems, setIsAdded } = props;
+  const { cartItems, setCartItems, setIsAdded, addToCart } = props;
 
   useEffect(() => {
     setIsAdded(false);
@@ -13,13 +13,16 @@ export default function Cart({ props }) {
     setCartItems(updatedCartItems);
   };
 
+  const containerProps = {
+    cartItems: cartItems,
+    setCartItems: setCartItems,
+    handleRemoveItem: handleRemoveItem,
+    addToCart: addToCart,
+  };
   return (
     <>
       <h1>Cart</h1>
-      <CartContainer
-        cartItems={cartItems}
-        handleRemoveItem={handleRemoveItem}
-      />
+      <CartContainer props={containerProps} />
     </>
   );
 }

@@ -4,7 +4,10 @@ export default function Home({ props }) {
   return (
     <>
       <h1>Home</h1>
-      <ProductsContainer addToCart={props.addToCart} />
+      <ProductsContainer
+        setIsAdded={props.setIsAdded}
+        addToCart={props.addToCart}
+      />
     </>
   );
 }

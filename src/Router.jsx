@@ -9,18 +9,23 @@ const Router = () => {
   const [cartItems, setCartItems] = useState([]);
   const [isAdded, setIsAdded] = useState(false);
 
-  const mainProps = {
-    addToCart: (item) => {
-      const newCartItems = [...cartItems, item];
-      setCartItems(newCartItems);
-      setIsAdded(true);
-    },
+  function addToCart(item) {
+    const timestamp = Date.now();
+    const newItem = { ...item, timestamp: timestamp };
+    const newCartItems = [...cartItems, newItem];
+    setCartItems(newCartItems);
+  }
+
+  const homeProps = {
+    addToCart: addToCart,
+    setIsAdded: setIsAdded,
   };
 
   const cartProps = {
     cartItems: cartItems,
     setCartItems: setCartItems,
     setIsAdded: setIsAdded,
+    addToCart: addToCart,
   };
 
   const itemCount = cartItems.length;
@@ -34,7 +39,7 @@ const Router = () => {
       children: [
         {
           path: "/",
-          element: <Home props={mainProps} />,
+          element: <Home props={homeProps} />,
           errorElement: <ErrorPage />,
         },
         {

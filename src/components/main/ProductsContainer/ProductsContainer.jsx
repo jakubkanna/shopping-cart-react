@@ -6,7 +6,7 @@ import {
   ProductImage,
 } from "./ProductsContainerStyles";
 
-export default function ProductsContainer({ addToCart }) {
+export default function ProductsContainer({ setIsAdded, addToCart }) {
   const [productList, setProductList] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -38,7 +38,13 @@ export default function ProductsContainer({ addToCart }) {
         <Product key={product.id} className="product">
           <ProductTitle>{product.title}</ProductTitle>
           <ProductImage src={product.image} alt={product.title} />
-          <button onClick={() => addToCart(product)}>Add to cart</button>
+          <button
+            onClick={() => {
+              setIsAdded(true);
+              addToCart(product);
+            }}>
+            Add to cart
+          </button>
         </Product>
       ))}
     </ProductContainer>
