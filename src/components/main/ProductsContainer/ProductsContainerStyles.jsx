@@ -23,4 +23,6 @@ export const ProductImage = styled.img`
   max-width: 100%;
   max-height: 100%;
   height: auto;
+  padding: 12px;
+  box-sizing: border-box;
 `;
