@@ -1,8 +1,9 @@
-import "./App.css";
+import "./styles/App.css";
 import Header from "./components/header/Header";
 import Main from "./components/main/Main";
 import Footer from "./components/footer/Footer";
 import { Link } from "react-router-dom";
+
 export default function App({ isAdded, setIsAdded, itemCount }) {
   return (
     <>

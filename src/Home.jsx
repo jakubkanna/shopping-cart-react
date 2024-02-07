@@ -2,8 +2,9 @@ import ProductsContainer from "./components/main/ProductsContainer/ProductsConta
 
 export default function Home({ props }) {
   return (
-    <div>
+    <>
+      <h1>Home</h1>
       <ProductsContainer addToCart={props.addToCart} />
-    </div>
+    </>
   );
 }

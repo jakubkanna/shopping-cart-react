@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
-import Cart from "./cart/Cart";
+import Cart from "./CartIcon";
 
 const Header = ({ itemCount }) => {
   return (

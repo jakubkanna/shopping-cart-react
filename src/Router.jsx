@@ -17,6 +17,12 @@ const Router = () => {
     },
   };
 
+  const cartProps = {
+    cartItems: cartItems,
+    setCartItems: setCartItems,
+    setIsAdded: setIsAdded,
+  };
+
   const itemCount = cartItems.length;
 
   const router = createBrowserRouter([
@@ -33,7 +39,7 @@ const Router = () => {
         },
         {
           path: "/cart",
-          element: <Cart />,
+          element: <Cart props={cartProps} />,
           errorElement: <ErrorPage />,
         },
       ],
