@@ -1,6 +1,6 @@
-import ProductsContainer from "./components/main/ProductsContainer/ProductsContainer";
+import ProductsContainer from "../template/main/ProductsContainer/ProductsContainer";
 
-export default function Home({ props }) {
+export default function HomePage({ props }) {
   return (
     <>
       <h1>Home</h1>

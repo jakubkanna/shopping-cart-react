@@ -11,9 +11,7 @@ import {
   CartContainerStyled,
 } from "./CartContainerStyles";
 
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-
-// Assuming "/" is your store page route
+import { Link } from "react-router-dom";
 
 export default function CartContainer({ props }) {
   const { cartItems, setCartItems, handleRemoveItem, addToCart } = props;
@@ -39,7 +37,7 @@ export default function CartContainer({ props }) {
   }
 
   function handleChange(e, item) {
-    e.target.value > item.quantity
+    e.target.value > getCount(item)
       ? addToCart(item)
       : setCartItems(reduceQuantity(item));
   }
@@ -52,14 +50,14 @@ export default function CartContainer({ props }) {
   function calculateTotalPrice() {
     let totalPrice = 0;
     cartItems.forEach((item) => {
-      totalPrice += item.price * getCount(item);
+      totalPrice += item.price;
     });
     return parseFloat(totalPrice.toFixed(2));
   }
 
   return (
     <CartContainerStyled>
-      {cartItems.length === 0 ? ( // Check if cart is empty
+      {cartItems.length === 0 ? (
         <>
           <p>Your cart is empty.</p>
           <p>
@@ -70,7 +68,6 @@ export default function CartContainer({ props }) {
         <>
           <CartList>
             {uniqueList.map((item) => {
-              item.quantity = getCount(item);
               return (
                 <CartItem key={item.id}>
                   <CartImgWrapper>
@@ -81,13 +78,13 @@ export default function CartContainer({ props }) {
                     <p>Quantity:</p>
                     <QuantityInput
                       type="number"
-                      value={item.quantity}
+                      value={getCount(item)}
                       name="itemQuantity"
                       id="itemQuantity"
                       onChange={(e) => handleChange(e, item)}
                     />
                   </div>
-                  <p>Price: ${item.price}</p>
+                  <p>Price: ${item.price * getCount(item)}</p>
                   <button onClick={() => handleRemoveItem(item.id)}>
                     Remove
                   </button>

@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App";
-import Home from "./Home";
-import Cart from "./Cart";
-import ErrorPage from "./ErrorPage";
+import App from "./components/template/App";
+import HomePage from "./components/pages/HomePage";
+import CartPage from "./components/pages/CartPage";
+import ErrorPage from "./components/pages/ErrorPage";
 import { useState } from "react";
 
 const Router = () => {
@@ -39,12 +39,12 @@ const Router = () => {
       children: [
         {
           path: "/",
-          element: <Home props={homeProps} />,
+          element: <HomePage props={homeProps} />,
           errorElement: <ErrorPage />,
         },
         {
           path: "/cart",
-          element: <Cart props={cartProps} />,
+          element: <CartPage props={cartProps} />,
           errorElement: <ErrorPage />,
         },
       ],

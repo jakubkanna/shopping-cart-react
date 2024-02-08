@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import CartContainer from "./components/main/cartContainer/CartContainer";
+import CartContainer from "../template/main/CartContainer/CartContainer";
 
-export default function Cart({ props }) {
+export default function CartPage({ props }) {
   const { cartItems, setCartItems, setIsAdded, addToCart } = props;
 
   useEffect(() => {
