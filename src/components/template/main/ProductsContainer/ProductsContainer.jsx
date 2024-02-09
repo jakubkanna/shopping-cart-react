@@ -39,6 +39,7 @@ export default function ProductsContainer({ setIsAdded, addToCart }) {
           <ProductTitle>{product.title}</ProductTitle>
           <ProductImage src={product.image} alt={product.title} />
           <button
+            type="button"
             onClick={() => {
               setIsAdded(true);
               addToCart(product);

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
-import Cart from "./CartIcon";
+import { Link } from "react-router-dom";
+import CartIcon from "./CartIcon";
 
 const Header = ({ itemCount }) => {
   return (
@@ -9,7 +9,7 @@ const Header = ({ itemCount }) => {
         <p>Logo</p>
       </Link>
       <Link to="/cart">
-        <Cart /> {itemCount}
+        <CartIcon /> {itemCount}
       </Link>
     </StyledHeader>
   );

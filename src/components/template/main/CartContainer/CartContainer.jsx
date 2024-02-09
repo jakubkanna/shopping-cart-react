@@ -10,8 +10,8 @@ import {
   QuantityInput,
   CartContainerStyled,
 } from "./CartContainerStyles";
-
 import { Link } from "react-router-dom";
+import { PropTypes } from "@mui/material";
 
 export default function CartContainer({ props }) {
   const { cartItems, setCartItems, handleRemoveItem, addToCart } = props;
@@ -104,3 +104,13 @@ export default function CartContainer({ props }) {
     </CartContainerStyled>
   );
 }
+
+// PropTypes validation
+CartContainer.propTypes = {
+  props: PropTypes.shape({
+    cartItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+    setCartItems: PropTypes.func.isRequired,
+    handleRemoveItem: PropTypes.func.isRequired,
+    addToCart: PropTypes.func.isRequired,
+  }).isRequired,
+};

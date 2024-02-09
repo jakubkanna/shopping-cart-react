@@ -1,9 +1,10 @@
 import "../../styles/App.css";
-import PropTypes from "prop-types";
 
+import PropTypes from "prop-types";
 import Header from "./header/Header";
 import Main from "./main/Main";
 import Footer from "./footer/Footer";
+
 import { Link } from "react-router-dom";
 
 function App({ isAdded, setIsAdded, itemCount }) {
