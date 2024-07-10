@@ -11,7 +11,7 @@ import {
   CartContainerStyled,
 } from "./CartContainerStyles";
 import { Link } from "react-router-dom";
-import { PropTypes } from "@mui/material";
+import PropTypes from 'prop-types';
 
 export default function CartContainer({ props }) {
   const { cartItems, setCartItems, handleRemoveItem, addToCart } = props;
